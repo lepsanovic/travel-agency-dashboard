@@ -1,10 +1,27 @@
-import { Outlet } from 'react-router';
+import { Outlet, redirect } from 'react-router';
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations';
 import { MobileSidebar, NavItems } from '~/components';
+import { account } from '~/appwrite/client';
+import { getExistingUser, storeUserData } from '~/appwrite/auth';
 
-import { registerLicense } from '@syncfusion/ej2-base';
+export async function clientLoader() {
+  try {
+    const user = await account.get();
 
-registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY);
+    if (!user.$id) return redirect('/sign-in');
+
+    const existingUser = await getExistingUser(user.$id);
+
+    if (existingUser?.status === 'user') {
+      return redirect('/');
+    }
+
+    return existingUser?.$id ? existingUser : await storeUserData();
+  } catch (e) {
+    console.log('Error in clientLoader', e);
+    return redirect('/sign-in');
+  }
+}
 
 const AdminLayout = () => {
   return (
