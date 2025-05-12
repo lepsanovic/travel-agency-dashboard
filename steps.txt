@@ -9,3 +9,10 @@ npm install @syncfusion/ej2-base @syncfusion/ej2-react-buttons @syncfusion/ej2-r
 appwrite za backend 
 
 console.cloud.google.com //najdobar za sve
+
+//gemini
+aistudio.google.com
+
+ npm i @google/generative-ai
+
+// unsplash.com/developers
