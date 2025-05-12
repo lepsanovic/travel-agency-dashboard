@@ -220,3 +220,35 @@ export const users = [
     status: 'admin',
   },
 ];
+
+export const countries: Country[] = [
+  {
+    name: 'Germany',
+    coordinates: [51.1657, 10.4515],
+    value: 'Germany',
+    openStreetMap: 'https://www.openstreetmap.org/relation/51477',
+  },
+  {
+    name: 'France',
+    coordinates: [46.6034, 1.8883],
+    value: 'France',
+    openStreetMap: 'https://www.openstreetmap.org/relation/2202162',
+  },
+  {
+    name: 'Japan',
+    coordinates: [36.2048, 138.2529],
+    value: 'Japan',
+    openStreetMap: 'https://www.openstreetmap.org/relation/382313',
+  },
+  {
+    name: 'Brazil',
+    coordinates: [-14.235, -51.9253],
+    value: 'Brazil',
+  },
+  {
+    name: 'Canada',
+    coordinates: [56.1304, -106.3468],
+    value: 'Canada',
+    openStreetMap: 'https://www.openstreetmap.org/relation/1428125',
+  },
+];
